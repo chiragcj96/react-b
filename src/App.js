@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Titles from './Titles'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    titles: [
+      {id:1, t:'Interstellar'},
+      {id:2, t:'Inception'}
+    ]
+  }
+
+  deleteTitle = (id) => {
+    const titles = this.state.titles.filter(title => {
+      return title.id !== id
+    });
+    this.setState({
+      titles: titles
+    });
+  }
+
+  render(){
+    return (
+      <div className="Suggestion-app container">            {/*container is used here to display it within a boxed region*/}
+        <h1 className="center blue-text">Title's</h1>
+        <Titles titles={this.state.titles} deleteTitle={this.deleteTitle} />
+        
+      </div>
+    );
+  }
+  
 }
 
 export default App;
