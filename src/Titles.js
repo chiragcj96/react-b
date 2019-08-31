@@ -5,16 +5,16 @@ import React from 'react'
 const Titles = ({titles, deleteTitle}) => {
 
     const titleList = titles.length ? (
-        titles.map(title =>{
+        titles.map(title => {
             return(
                 <div className="collection-item" key={title.id}>
-                    <span onClick={() => {deleteTitle(title.id)}}>{title.t}</span>
+                    <span onClick={() => {deleteTitle(title.id)}}>{title.content}</span>
                 </div>
             )
         })
     ) : (
         <p className= "center">Start typing ...</p>
-    )
+    );
     return (
         <div className="titles collection">
             {titleList}
@@ -22,4 +22,4 @@ const Titles = ({titles, deleteTitle}) => {
     )
 }
 
-export default Titles
+export default Titles;
