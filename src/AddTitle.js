@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 class AddTitle extends Component{
     state = {
-        content: ''
+        text: ''
     }
 
     handleChange = (e) => {
         this.setState({
-            content: e.target.value
+            text: e.target.value
         });
     }
 
@@ -15,7 +15,7 @@ class AddTitle extends Component{
         e.preventDefault();
         this.props.addTitle(this.state);            {/* Calling function to add title */}
         this.setState({
-            content: ''
+            text: ''
         })
     }
 
@@ -24,7 +24,7 @@ class AddTitle extends Component{
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label> Add new title: </label>
-                    <input type="text" onChange={this.handleChange} value={this.state.content} />
+                    <input type="text" onChange={this.handleChange} value={this.state.text} />
                 </form>
             </div>
         )

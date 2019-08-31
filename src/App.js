@@ -6,8 +6,8 @@ import AddTitle from './AddTitle'
 class App extends Component {
   state = {
     titles: [
-      {id:1, content:'Interstellar'},
-      {id:2, content:'Inception'}
+      {id:1, text:'Interstellar'},
+      {id:2, text:'Inception'}
     ]
   }
 
@@ -22,7 +22,7 @@ class App extends Component {
 
   addTitle = (title) => {
     title.id = Math.random();
-    let titles = [...this.state.titles, title];               {/* Using the spread operator to grab the content of (new)this.state and dumping it to (old)Array titles, x=x+x' */}
+    let titles = [...this.state.titles, title];               {/* Using the spread operator to grab the text of (new)this.state and dumping it to (old)Array titles, x=x+x' */}
     this.setState({
       titles
     });

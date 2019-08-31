@@ -8,7 +8,7 @@ const Titles = ({titles, deleteTitle}) => {
         titles.map(title => {
             return(
                 <div className="collection-item" key={title.id}>
-                    <span onClick={() => {deleteTitle(title.id)}}>{title.content}</span>
+                    <span onClick={() => {deleteTitle(title.id)}}>{title.text}</span>
                 </div>
             )
         })
