@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';               {/* to coonect the component to main logic file */}
 
 class AddTitle extends Component{
     state = {
